@@ -69,6 +69,7 @@ with st.sidebar:
             )
 
 key_dict = json.loads(st.secrets["textkey"])
+print('key_dict', key_dict)
 creds = service_account.Credentials.from_service_account_info(key_dict)
 st.session_state["firestore_db"] = firestore.Client(credentials=creds)
 load_local_embedding_model()
